@@ -252,7 +252,7 @@ class Pinterest:
             return True
         return False
 
-    def pin(self, board_id, image_url, description='', link='', share_facebook=False, share_twitter=False):
+    def pin(self, board_id, image_url, title='', description='', link='', share_facebook=False, share_twitter=False):
         self.login_required()
         url = 'https://www.pinterest.com/resource/PinResource/create/'
         data = url_encode({
@@ -261,6 +261,7 @@ class Pinterest:
                 'options': {
                     "board_id": board_id,
                     "image_url": image_url,
+                    "title": title,
                     "description": description,
                     "link": link if link else image_url,
                     "scrape_metric": {"source": "www_url_scrape"},
