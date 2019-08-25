@@ -248,3 +248,4 @@ GitHub.sublime-settings
 # Notepad++ backups #
 *.bak
 /test.py
+.DS_Store

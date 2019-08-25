@@ -268,7 +268,7 @@ class Pinterest:
                     "share_facebook": share_facebook,
                     "share_twitter": share_twitter},
                 "context": {}
-            }).replace(' ', '')
+            })
         })
         result = self.post(url=url, data=data, ajax=True).json()
         if result['resource_response']['error'] is None:
