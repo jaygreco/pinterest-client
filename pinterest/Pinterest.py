@@ -187,7 +187,7 @@ class Pinterest:
         })
         r = self.post(url=url, data=data, ajax=True)
         result = r.json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             board = result['resource_response']['data']
             return board
         return None
@@ -203,7 +203,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -218,7 +218,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -233,7 +233,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -248,7 +248,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -271,8 +271,9 @@ class Pinterest:
                 "context": {}
             })
         })
+
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             pin = {'id': result['resource_response']['data']['id']}
             return pin
         return None
@@ -298,7 +299,7 @@ class Pinterest:
                 }).replace(' ', '')
             })
             result = self.post(url=url, data=data, ajax=True).json()
-            if result['resource_response']['error'] is None:
+            if result['resource_response']['status'] == "success":
                 pin = {'id': result['resource_response']['data']['id']}
                 return pin
         return None
@@ -350,7 +351,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             pin = {'id': result['resource_response']['data']['id']}
             return pin
         return None
@@ -366,7 +367,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -381,7 +382,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -396,7 +397,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -411,7 +412,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             comment = {
                 'id': result['resource_response']['data']['id'],
                 'text': result['resource_response']['data']['text'],
@@ -431,7 +432,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -446,7 +447,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
@@ -465,7 +466,7 @@ class Pinterest:
             }).replace(' ', '')
         })
         result = self.post(url=url, data=data, ajax=True).json()
-        if result['resource_response']['error'] is None:
+        if result['resource_response']['status'] == "success":
             return True
         return False
 
