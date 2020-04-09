@@ -124,8 +124,7 @@ class Pinterest:
             })
             url = 'https://www.pinterest.com/resource/UserSessionResource/create/'
             result = self.post(url=url, data=data, ajax=True).json()
-            error = result['resource_response']['error']
-            if error is None:
+            if result['resource_response']['status'] == "success":
                 self.user = self.extract_user_data(self.get(self.home_page).content)
                 self.is_logged_in = True
             else:
